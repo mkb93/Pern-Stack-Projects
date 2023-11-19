@@ -1,12 +1,9 @@
 *{
 
 }
-.top_div{
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-}
+
 .main_title {
+  text-align: center;
   margin-top: 5%;
 }
 .top_form{
@@ -21,6 +18,16 @@
 }
 .top_form_input_btn {
   width:10%;
-  
-
+  height: 5%;
+  margin-top: 3%;
+}
+.list{
+  text-align: center;
+  width: 70%;
+  margin-left: 12%;
+  margin-top: 5%;
+}
+.delete-btn{
+  background: rgba(169, 64, 64,0.9);
+  border-radius: 10%;
 }
