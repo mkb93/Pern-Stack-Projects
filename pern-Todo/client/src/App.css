@@ -21,13 +21,39 @@
   height: 5%;
   margin-top: 3%;
 }
+.list-container{
+  
+}
 .list{
   text-align: center;
   width: 70%;
   margin-left: 12%;
   margin-top: 5%;
 }
+.list-bottom{
+  width: 100%;
+  align-items: center;
+}
+.prev-btn,
+.next-btn,
+.delete-btn {
+  color: var(--clr-primary-7);
+  font-size: 1.25rem;
+  background: blueviolet;
+  border-color: transparent;
+  margin: 0 0.5rem;
+  transition: var(--transition);
+  cursor: pointer;
+  border-radius: 10%;
+  
+}
 .delete-btn{
   background: rgba(169, 64, 64,0.9);
-  border-radius: 10%;
+  
+}
+.prev-btn:hover,
+.next-btn:hover,
+.delete-btn:hover {
+  color: var(--clr-primary-5);
+  background-color: #fff;
 }

@@ -13,6 +13,7 @@ function InputTodo() {
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(body)
       });
+      setDescription("");
       console.log(response)
     } catch (error) {
       console.error(error.message)

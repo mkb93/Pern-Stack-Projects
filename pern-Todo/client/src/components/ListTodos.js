@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react'
-
+import EditTodo from './EditTodo';
 function ListTodos() {
   const [todos, setTodos] = useState([])
   const deleteTodo = async id => {
@@ -21,15 +21,16 @@ function ListTodos() {
       console.error(error.message)
     }
   }
-
+  console.log(todos)
   useEffect(()=>{
     getTodos();
-  },[todos])
-  console.log(todos)
+  },[])
+  
 
 
   return (
     <Fragment>
+      <div className='list-container'>
       <table className="list">
         <thead>
         <tr >
@@ -43,7 +44,7 @@ function ListTodos() {
             return(
             <tr key={todo.todo_id}>
               <td>{todo.description}</td>
-              <td>Edit</td>
+              <td><EditTodo/></td>
               <td>
                 <button className='delete-btn' onClick={()=> deleteTodo(todo.todo_id)}>Delete</button>
               </td>
@@ -52,6 +53,11 @@ function ListTodos() {
           })}
         </tbody>
       </table>
+      <div className='list-bottom'>
+      <button className='prev-btn'>previous</button>
+      <button className='next-btn'>next</button>
+      </div>
+      </div>
     </Fragment>
     
   )
