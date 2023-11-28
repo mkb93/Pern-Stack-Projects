@@ -16,27 +16,30 @@
   width: 100%;
   margin-top: 5%;
 }
-.top_form_input_btn {
-  width:10%;
-  height: 5%;
-  margin-top: 3%;
-}
+
 .list-container{
-  
+  width: 100%;
 }
 .list{
   text-align: center;
+  align-items: center;
+  justify-content: center;
   width: 70%;
   margin-left: 12%;
   margin-top: 5%;
 }
 .list-bottom{
-  width: 100%;
-  align-items: center;
+  margin-left: 12%;
+  width: 70%;
+  margin-top: 5%;
+  text-align: center;
+  
 }
 .prev-btn,
 .next-btn,
-.delete-btn {
+.delete-btn,
+.edit-btn,
+.top_form_input_btn {
   color: var(--clr-primary-7);
   font-size: 1.25rem;
   background: blueviolet;
@@ -47,13 +50,24 @@
   border-radius: 10%;
   
 }
+.top_form_input_btn {
+  width:10%;
+  height: 5%;
+  margin-top: 3%;
+  background: rgba(255, 149, 0, 0.879);
+}
+.edit-btn {
+  background: rgba(10, 64, 64,0.9);
+}
 .delete-btn{
   background: rgba(169, 64, 64,0.9);
   
 }
 .prev-btn:hover,
 .next-btn:hover,
-.delete-btn:hover {
+.delete-btn:hover,
+.edit-btn:hover,
+.top_form_input_btn:hover {
   color: var(--clr-primary-5);
   background-color: #fff;
 }

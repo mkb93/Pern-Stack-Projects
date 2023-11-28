@@ -2,7 +2,7 @@ import React from 'react'
 
 function EditTodo() {
   return (
-    <div>EditTodo</div>
+    <div><button className='edit-btn'>Edit</button></div>
   )
 }
 

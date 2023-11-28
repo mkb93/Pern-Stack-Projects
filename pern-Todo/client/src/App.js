@@ -6,8 +6,9 @@ import ListTodos from './components/ListTodos';
 function App() {
   return(
 <Fragment >
-<InputTodo/>
+<InputTodo input='ADD'/>
 <ListTodos/>
+
 </Fragment>
   )
 }

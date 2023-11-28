@@ -1,9 +1,9 @@
 import { Fragment, useState } from "react"
 import React from 'react'
 
-function InputTodo() {
+function InputTodo({input}) {
   const [ description, setDescription]= useState("");
-
+  let value = input
   const onSubmitForm = async e => {
     e.preventDefault();
     try {
@@ -28,7 +28,7 @@ function InputTodo() {
       value={description} 
       onChange={e => setDescription(e.target.value)}
       />
-      <button className="top_form_input_btn">ADD</button>
+      <button className="top_form_input_btn">{value}</button>
     </form>
     </Fragment>
   )
