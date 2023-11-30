@@ -61,7 +61,10 @@
 }
 .delete-btn{
   background: rgba(169, 64, 64,0.9);
-  
+}
+.exit-btn{
+  background: black;
+  color: white;
 }
 .prev-btn:hover,
 .next-btn:hover,

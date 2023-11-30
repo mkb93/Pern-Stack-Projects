@@ -44,7 +44,7 @@ function ListTodos() {
             return(
             <tr key={todo.todo_id}>
               <td>{todo.description}</td>
-              <td><EditTodo/></td>
+              <td><EditTodo todo={todo}/></td>
               <td>
                 <button className='delete-btn' onClick={()=> deleteTodo(todo.todo_id)}>Delete</button>
               </td>

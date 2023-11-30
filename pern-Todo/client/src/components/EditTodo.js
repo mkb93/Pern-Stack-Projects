@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Modal from './Modal/Modal'
+function EditTodo({todo}) {
+  const [description, setDescription]=useState(todo.description)
 
-function EditTodo() {
   return (
-    <div><button className='edit-btn'>Edit</button></div>
+    <div><Modal description={description}/></div>
   )
 }
 
