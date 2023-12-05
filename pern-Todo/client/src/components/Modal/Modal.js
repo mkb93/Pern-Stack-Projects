@@ -1,15 +1,30 @@
 import React, { useState } from "react";
 import "./Modal.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCross } from '@fortawesome/free-solid-svg-icons'
-export default function Modal({description}) {
+export default function Modal({todo, onButtonPress}) {
   const [modal, setModal] = useState(false);
-console.log(description)
+  const [text, setText] = useState(todo.description);
 
   const toggleModal = () => {
     setModal(!modal);
   };
-
+  const updateDescription = async (e)=>{
+    e.preventDefault()
+    try {
+      const body =  { description: text } ;
+      const response = await fetch(`http://localhost:5000/todo/${todo.todo_id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json"},
+        body: JSON.stringify(body)
+      })
+      console.log(body)
+      console.log(response)
+    } catch (error) {
+      console.error(error.message)
+    }
+    onButtonPress()
+    toggleModal()
+   
+  }
   if(modal) {
     document.body.classList.add('active-modal')
   } else {
@@ -26,20 +41,18 @@ console.log(description)
         <div className="modal">
           <div onClick={toggleModal} className="overlay"></div>
           <div className="modal-content">
-          <button className="edit-btn" onClick={toggleModal}>
-              Edit
-            </button>
-          <button className="delete-btn" onClick={toggleModal}>
-              Delete
-            </button>
-            <h2>{description}</h2>
+
+            <h2>Press button when done</h2>
             <form>
-              input
+              <input className="modal-input" 
+              value={text} 
+              onChange={e => setText(e.target.value)}></input>
+              <button className="modal-edit-btn" onClick={e => updateDescription(e)}>Edit</button>
             </form>
             
           
             <button className="exit-btn" onClick={toggleModal}>
-            <FontAwesomeIcon icon={faCross} />
+            EXIT
             </button>
           </div>
         </div>

@@ -1,7 +1,10 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import EditTodo from './EditTodo';
-function ListTodos() {
+function ListTodos({triggerUpdat, onButtonPress}) {
   const [todos, setTodos] = useState([])
+  const [triggerUpdate, setUpdateTrigger] = useState(triggerUpdat)
+ 
+  console.log(triggerUpdate)
   const deleteTodo = async id => {
     try {
       const response = await fetch(`http://localhost:5000/todo/${id}`, {
@@ -21,10 +24,15 @@ function ListTodos() {
       console.error(error.message)
     }
   }
-  console.log(todos)
-  useEffect(()=>{
-    getTodos();
-  },[])
+  useEffect(() => {
+    // Function to fetch todos
+    const fetchData = async () => {
+      await getTodos();
+    };
+
+    // Initial fetch
+    fetchData();
+  }, [triggerUpdat])
   
 
 
@@ -44,7 +52,7 @@ function ListTodos() {
             return(
             <tr key={todo.todo_id}>
               <td>{todo.description}</td>
-              <td><EditTodo todo={todo}/></td>
+              <td><EditTodo todo={todo} onButtonPress={onButtonPress}/></td>
               <td>
                 <button className='delete-btn' onClick={()=> deleteTodo(todo.todo_id)}>Delete</button>
               </td>

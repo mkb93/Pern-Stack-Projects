@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Modal from './Modal/Modal'
-function EditTodo({todo}) {
-  const [description, setDescription]=useState(todo.description)
+function EditTodo({todo, onButtonPress}) {
+ 
 
   return (
-    <div><Modal description={description}/></div>
+    <div><Modal todo={todo} onButtonPress={onButtonPress}/></div>
   )
 }
 

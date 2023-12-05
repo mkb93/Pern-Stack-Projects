@@ -39,7 +39,9 @@
 .next-btn,
 .delete-btn,
 .edit-btn,
-.top_form_input_btn {
+.exit-btn,
+.top_form_input_btn,
+.modal-edit-btn {
   color: var(--clr-primary-7);
   font-size: 1.25rem;
   background: blueviolet;
@@ -65,12 +67,26 @@
 .exit-btn{
   background: black;
   color: white;
+  position:absolute;
+  top: 90%;
+  left:80%;
+}
+.modal-input {
+  position:absolute;
+  top: 50%;
+  width: 100%;
+  left: -1%;
+}
+.modal-edit-btn {
+
 }
 .prev-btn:hover,
 .next-btn:hover,
 .delete-btn:hover,
 .edit-btn:hover,
-.top_form_input_btn:hover {
+.top_form_input_btn:hover,
+.exit-btn:hover,
+.modal-edit-btn:hover {
   color: var(--clr-primary-5);
   background-color: #fff;
 }

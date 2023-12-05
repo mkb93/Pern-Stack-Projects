@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react"
 import React from 'react'
 
-function InputTodo({input}) {
+function InputTodo({input, onButtonPress}) {
   const [ description, setDescription]= useState("");
   let value = input
   const onSubmitForm = async e => {
@@ -18,6 +18,7 @@ function InputTodo({input}) {
     } catch (error) {
       console.error(error.message)
     }
+    onButtonPress()
   }
   return (
     <Fragment >
