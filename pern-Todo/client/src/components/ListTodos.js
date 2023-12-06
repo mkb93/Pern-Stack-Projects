@@ -61,10 +61,10 @@ function ListTodos({triggerUpdat, onButtonPress}) {
           })}
         </tbody>
       </table>
-      <div className='list-bottom'>
+      {/* <div className='list-bottom'>
       <button className='prev-btn'>previous</button>
       <button className='next-btn'>next</button>
-      </div>
+      </div> */}
       </div>
     </Fragment>
     
