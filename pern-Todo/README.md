@@ -10,4 +10,6 @@ problems you may face:
   the future has changed everything ( todays date is 20/1/2024)
   you may have other applications using the ports i defined so you'll have them from port 5000 and 3000. (i recommend using chat gpt if you dont know where to do this)
 
+test text...
+
 
